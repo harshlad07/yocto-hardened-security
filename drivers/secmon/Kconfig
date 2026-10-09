@@ -1,0 +1,19 @@
+config SECMON
+	bool "Enable Security Monitoring Module"
+	default y
+	help
+	  This module provides lightweight kernel monitoring for process
+	  activity, suspicious privilege usage, and security-related event
+	  logging. It is intended for embedded Linux hardening experiments
+	  and security auditing demonstrations.
+
+if SECMON
+
+config SECMON_LOG_LEVEL
+	int "Security monitor log level"
+	default 4
+	help
+	  Higher values produce more verbose diagnostics. Use a low value
+	  for production-oriented systems.
+
+endif
